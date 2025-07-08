@@ -7,13 +7,10 @@ public static void main (String[] args) {
 
     //두개의 숫자를 입력 = 변수 선언
 
-    System.out.print("[숫자] [연산] [숫자] 작성 후 엔터: ");
+    System.out.print("숫자 두개를 작성해 주세요.");
     Scanner input=new Scanner(System.in);
     int num1 = input.nextInt();
-    char elemen = input.next().charAt(0);
     int num2 = input.nextInt();
-
-    System.out.println( num1 + " + " + num2 + " = " + (num1 + num2) );
 
 
 }
