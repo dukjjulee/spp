@@ -10,6 +10,7 @@ public static void main (String[] args) {
     System.out.print("[숫자] [연산] [숫자] 작성 후 엔터: ");
     Scanner input=new Scanner(System.in);
     int num1 = input.nextInt();
+    char elemen = input.next().charAt(0);
     int num2 = input.nextInt();
 
     System.out.println( num1 + " + " + num2 + " = " + (num1 + num2) );
