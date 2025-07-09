@@ -41,21 +41,21 @@ public class Calculator {
             }
         }
 
-
-
         if (elemen == ('+'))
-        System.out.println( num1 + " + " + num2 + " = " + (num1 + num2) );
 
-        else if (elemen == ('-'))
-            System.out.println( num1 + " - " + num2 + " = " + (num1 - num2) );
+            System.out.println( num1 + " + " + num2 + " = " + (num1 + num2) );
 
-        else if (elemen == ('*'))
-            System.out.println( num1 + " * " + num2 + " = " + (num1 * num2) );
+            else if (elemen == ('-'))
+                System.out.println( num1 + " - " + num2 + " = " + (num1 - num2) );
 
-        else if (elemen == ('/') && (num2 != 0))
-            System.out.println( num1 + " / " + num2 + " = " + (num1 / num2) );
+            else if (elemen == ('*'))
+                System.out.println( num1 + " * " + num2 + " = " + (num1 * num2) );
 
-        else if (elemen == ('/') && (num2 == 0))
-            System.out.println("나눗셈 진행시 숫자2가 0이 될 수 없습니다");
+            else if (elemen == ('/') && (num2 != 0)) {
+                System.out.println(num1 + " / " + num2 + " = " + (float) num1 / num2 );
+            }
+            else if (elemen == ('/') && (num2 == 0))
+                System.out.println("나눗셈 진행시 숫자2가 0이 될 수 없습니다");
+
     }
 }
