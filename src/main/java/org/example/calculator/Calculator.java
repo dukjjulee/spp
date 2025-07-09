@@ -43,13 +43,20 @@ public class Calculator {
             while (true) {
                 try {
                     num2 = input.nextInt();
+                    if (elemen == '/')
+                        if (num2 == 0) {
+                            System.out.print("나눗셈 진행시 숫자2가 0이 될 수 없습니다\n숫자2: ");
+                            num2 = -1;
 
-                    if (num2 >= 0) {
-                        break;
+                        }else {
 
-                    } else {
-                        System.out.print("숫자가 너무 작습니다.(0 이상 가능)\n숫자2: ");
-                    }
+                            if (num2 >= 0) {
+                                break;
+
+                            } else {
+                                System.out.print("숫자가 너무 작습니다.(0 이상 가능)\n숫자2: ");
+                            }
+                        }
                 } catch (Exception e) {
                     System.out.print("지원되지 않는 기능입니다.\n숫자2: ");
                     input.nextLine();
@@ -70,9 +77,7 @@ public class Calculator {
 
             else if (elemen == ('/') && (num2 != 0)) {
                 System.out.println(num1 + " / " + num2 + " = " + (float) num1 / num2);
-            } else if (elemen == ('/') && (num2 == 0))
-                System.out.println("나눗셈 진행시 숫자2가 0이 될 수 없습니다");
-
+            }
             System.out.print("계산을 끝마치려면 'exit' 계속하려면 엔터: ");
             input.nextLine();
             exit = input.nextLine();
