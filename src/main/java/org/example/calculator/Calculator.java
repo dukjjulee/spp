@@ -9,29 +9,24 @@ public class Calculator {
         System.out.print("숫자1: ");
         Scanner input=new Scanner(System.in);
         int num1 = input.nextInt();
-            if (num1 >= 0) {
-                System.out.print("기호: ");
-            } else {
+            while (num1 <= 0) {
                 System.out.print("숫자가 너무 작습니다.(양의 정수만 가능):");
                 num1 = input.nextInt();
             }
-
+        System.out.print("기호: ");
         char elemen = input.next().charAt(0);
-            do {
+            while (elemen == '+' || elemen == '-' || elemen == '*' || elemen == '/') {
                 System.out.print("프로그램에서 사용되는 연산기호가 아닙니다( '+' '-' '*' '/' )");
-                elemen = input.next().charAt(0);
-            } while (elemen == '+' || elemen == '-' || elemen == '*' || elemen == '/');
+                    elemen = input.next().charAt(0);
+            }
 
 
         System.out.println("숫자2");
         int num2 = input.nextInt();
-        if (num2 >= 0) {
-            System.out.print("기호: ");
-        } else {
-            System.out.print("숫자가 너무 작습니다.(양의 정수만 가능):");
-            num2 = input.nextInt();
-        }
-
+            while (num2 <= 0) {
+                System.out.print("숫자가 너무 작습니다.(양의 정수만 가능):");
+                num1 = input.nextInt();
+            }
 
         if (elemen == ('+'))
         System.out.println( num1 + " + " + num2 + " = " + (num1 + num2) );
