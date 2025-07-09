@@ -5,20 +5,28 @@ public class Calculator {
 
     public static void main (String[] args) {
         Scanner input=new Scanner(System.in);
-        //두개의 숫자를 입력 = 변수 선언
+        int num1 = -1;
+        int num2 = -1;
 
         System.out.print("숫자1: ");
-        int num1 = input.nextInt();
-        while (true) {
+             while (true) {
+                 try {
+                     num1 = input.nextInt();
 
+                     if (num1 >= 0) {
+                         break;
 
-            if (num1 >= 0) {
-                break;
-            } else {
-                System.out.print("숫자가 너무 작습니다.(0 이상 가능): ");
-                num1 = input.nextInt();
-            }
-        }
+                     } else {
+                         System.out.print("숫자가 너무 작습니다.(0 이상 가능)\n숫자1: ");
+                     }
+                 } catch (Exception e) {
+                     System.out.print("지원되지 않는 기능입니다.\n숫자1: ");
+                     input.nextLine();
+                     num1 = -1;
+
+                 }
+             }
+
 
         System.out.print("기호: ");
         char elemen = input.next().charAt(0);
@@ -28,16 +36,21 @@ public class Calculator {
             };
 
         System.out.print("숫자2: ");
-        int num2 = input.nextInt();
-
         while (true) {
-
-            if (num2 >= 0) {
-                break;
-            }
-            else {
-                System.out.print("숫자가 너무 작습니다.(0 이상 가능): ");
+            try {
                 num2 = input.nextInt();
+
+                if (num2 >= 0) {
+                    break;
+
+                } else {
+                    System.out.print("숫자가 너무 작습니다.(0 이상 가능)\n숫자2: ");
+                }
+            } catch (Exception e) {
+                System.out.print("지원되지 않는 기능입니다.\n숫자2: ");
+                input.nextLine();
+                num2 = -1;
+
             }
         }
 
