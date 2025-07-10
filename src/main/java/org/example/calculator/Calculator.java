@@ -32,18 +32,17 @@ public class Calculator {
 
 
             System.out.print("기호: ");
-            char elemen = input.next().charAt(0);
-            while (elemen != '+' && elemen != '-' && elemen != '*' && elemen != '/') {
+            String elemen = input.nextLine();
+            while (!elemen.equals('+') || !elemen.equals ('-') || !elemen.equals ('*') || !elemen.equals('/')) {
                 System.out.print("프로그램에서 사용되는 연산기호가 아닙니다( '+' '-' '*' '/' ): ");
-                elemen = input.next().charAt(0);
+                elemen = input.nextLine();
             }
-            ;
 
             System.out.print("숫자2: ");
             while (true) {
                 try {
                     num2 = input.nextInt();
-                    if (elemen == '/')
+                    if (elemen.equals('/'))
                         if (num2 == 0) {
                             System.out.print("나눗셈 진행시 숫자2가 0이 될 수 없습니다\n숫자2: ");
                             num2 = -1;
@@ -65,17 +64,17 @@ public class Calculator {
                 }
             }
 
-            if (elemen == ('+'))
+            if (elemen.equals('+'))
 
                 System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
 
-            else if (elemen == ('-'))
+            else if (elemen.equals ('-'))
                 System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
 
-            else if (elemen == ('*'))
+            else if (elemen.equals ('*'))
                 System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
 
-            else if (elemen == ('/') && (num2 != 0)) {
+            else if (elemen.equals('+') && (num2 != 0)) {
                 System.out.println(num1 + " / " + num2 + " = " + (float) num1 / num2);
             }
             System.out.print("계산을 끝마치려면 'exit' 계속하려면 엔터: ");
