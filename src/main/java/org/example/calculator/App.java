@@ -46,7 +46,7 @@ public class App {
                     num2 = input.nextInt();
                     if (elemen == '/')
                         if (num2 == 0) {
-                            System.out.print("\n숫자2: ");
+                            System.out.print("0으로는 나눌 수 없습니다. \n숫자2: ");
                             num2 = -1;
 
                         }else {
