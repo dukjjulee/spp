@@ -12,6 +12,7 @@ public class App {
         String exit = input.nextLine();
 
         while ( !exit.equals("exit")) {
+
             System.out.print("숫자1: ");
             while (true) {
                 try {
@@ -44,34 +45,32 @@ public class App {
             while (true) {
                 try {
                     num2 = input.nextInt();
-                    if (elemen == '/')
-                        if (num2 == 0) {
-                            System.out.print("0으로는 나눌 수 없습니다. \n숫자2: ");
-                            num2 = -1;
+                    if (elemen == '/' && num2 == 0) {
+                        System.out.print("0으로는 나눌 수 없습니다. \n숫자2: ");
+                        num2 = -1;
+                    }
+                    else {
+                        if (num2 >= 0) break;
+                        else System.out.print("숫자가 너무 작습니다.(1 이상 가능)\n숫자2: ");
+                    }
 
-                        }else {
-
-                            if (num2 >= 0) {
-                                break;
-
-                            } else {
-                                System.out.print("숫자가 너무 작습니다.(0 이상 가능)\n숫자2: ");
-                            }
-                        }
                 } catch (Exception e) {
                     System.out.print("지원되지 않는 기능입니다.\n숫자2: ");
                     input.nextLine();
-                    num2 = -1;
                 }
             }
+
+            input.nextLine();
 
             Calculator calculator = new Calculator(num1, elemen, num2);
             int result = calculator.calculate();
             System.out.println("=" + result);
 
-            System.out.print("계산을 끝마치려면 'exit' 계속하려면 엔터: ");
-            input.nextLine();
+            System.out.print("계산을 시작하려면 엔터, 끝마치려면 'exit': ");
             exit = input.nextLine();
+
         }
+        input.close();
+        System.out.println("계산 종료");
     }
 }
