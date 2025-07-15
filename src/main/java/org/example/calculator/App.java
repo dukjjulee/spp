@@ -7,6 +7,8 @@ public class App {
         int num1, num2;
         char elemen;
 
+        Calculator calculator = new Calculator();
+
         Scanner input = new Scanner(System.in);
         System.out.print("계산을 시작하려면 엔터, 끝마치려면 'exit': ");
         String exit = input.nextLine();
@@ -47,7 +49,6 @@ public class App {
                     num2 = input.nextInt();
                     if (elemen == '/' && num2 == 0) {
                         System.out.print("0으로는 나눌 수 없습니다. \n숫자2: ");
-                        num2 = -1;
                     }
                     else {
                         if (num2 >= 0) break;
@@ -62,9 +63,13 @@ public class App {
 
             input.nextLine();
 
-            Calculator calculator = new Calculator(num1, elemen, num2);
-            int result = calculator.calculate();
+            int result = calculator.calculate(num1, elemen, num2);
             System.out.println("=" + result);
+
+            if (calculator.getResult().size() > 5) {
+                calculator.removeResult();
+                System.out.println("결과가 5개를 초과하여 오래된 결과를 삭제했습니다.");
+            }
 
             System.out.print("계산을 시작하려면 엔터, 끝마치려면 'exit': ");
             exit = input.nextLine();
